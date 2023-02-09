@@ -1,11 +1,14 @@
 import {LitElement, html} from 'lit';
-import {customElement} from 'lit/decorators.js';
+import {customElement, property} from 'lit/decorators.js';
 
 @customElement('my-element')
 export class MyElement extends LitElement {
+  @property()
+  message: string = 'Hola mundo!';
+
   render() {
     return html`
-      <p>Hola mundo! Este es mi elemento</p>
+      <p>${this.message}</p>
     `;
   }
 }
